@@ -1,0 +1,54 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    tools:context="com.ahmed.petapp.Fragments.DonnationsFragment">
+
+    <!-- Donation Title -->
+    <TextView
+        android:id="@+id/tv_donation_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Support Pet Adoption"
+        android:gravity="center"
+        android:textSize="30sp"
+        android:textColor="@color/black" />
+      
+
+    <!-- Donation Description -->
+
+    <!-- Donation Amount Input -->
+
+
+
+    <EditText
+        android:id="@+id/et_donation_amount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Amount"
+        android:inputType="numberDecimal"
+        android:layout_marginTop="16dp"
+        android:layout_gravity="center"
+        android:background="@android:drawable/editbox_background" />
+
+    <!-- Donation Confirm Button -->
+    <Button
+        android:id="@+id/btn_donate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Donate"
+        android:layout_marginTop="24dp"
+        android:layout_gravity="center_horizontal|bottom"
+        android:background="@color/lavender"
+        android:textColor="#FFFFFF" />
+
+    <!-- Progress bar (hidden by default) -->
+    <ProgressBar
+        android:id="@+id/pb_donation_progress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:layout_gravity="center" />
+
+</FrameLayout>
