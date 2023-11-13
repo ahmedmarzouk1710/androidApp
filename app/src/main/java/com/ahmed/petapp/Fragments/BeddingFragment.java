@@ -1,14 +1,28 @@
 package com.ahmed.petapp.Fragments;
 
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
+import android.widget.GridLayout;
+import android.widget.ImageView;
+import android.widget.TextView;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+
+import com.ahmed.petapp.DAO.ProductDAO;
+import com.ahmed.petapp.databaseApp.AppDatabase;
+import com.ahmed.petapp.Module.Category;
+import com.ahmed.petapp.Module.Product;
 import com.example.petapp.R;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -48,6 +62,108 @@ public class BeddingFragment extends Fragment {
         return fragment;
     }
 
+    private Category category = Category.Bedding;
+    private List<Product> productListBedding;
+    private List<Product> productListFinding;
+    private ProductDAO productDAO;
+    private EditText searchEditText;
+
+
+    @Nullable
+    @Override
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        View rootView = inflater.inflate(R.layout.fragment_bedding, container, false);
+        TextView textView = rootView.findViewById(R.id.textView);
+        textView.setText(category.name());
+
+        productDAO = AppDatabase.getInstance(requireContext()).productDAO();
+
+        productListBedding = productDAO.getProductsByCategory(category);
+        productListFinding = productDAO.getProductsByCategory(Category.Bedding);
+        List<Product> combinedList = new ArrayList<>();
+        combinedList.addAll(productListBedding);
+        combinedList.addAll(productListFinding);
+        searchEditText = rootView.findViewById(R.id.searchEditText);
+        searchEditText.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                // Filter the product list based on the search text
+                filterProducts(charSequence.toString());
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+            }
+        });
+
+        displayProducts(rootView, combinedList);
+
+        return rootView;
+    }
+
+    private void filterProducts(String searchText) {
+        List<Product> filteredList = new ArrayList<>();
+        for (Product product : productListBedding) {
+            if (product.getTitle().toLowerCase().contains(searchText.toLowerCase())) {
+                filteredList.add(product);
+            }
+        }
+        // Display the filtered product list
+        displayProducts(getView(), filteredList);
+    }
+
+
+    private void displayProducts(View rootView, List<Product> productList) {
+        GridLayout gridLayout = rootView.findViewById(R.id.gridLayout);
+        gridLayout.removeAllViews();
+
+        for (int i = 0; i < productList.size(); i++) {
+            Product product = productList.get(i);
+
+            View productItemView = LayoutInflater.from(requireContext()).inflate(R.layout.product_item_layout2, gridLayout, false);
+
+            ImageView productImageView = productItemView.findViewById(R.id.productImageView2);
+            TextView productNameTextView = productItemView.findViewById(R.id.productNameTextView2);
+            TextView productPriceTextView = productItemView.findViewById(R.id.productPriceTextView2);  // New TextView for price
+            ImageView deleteButton = productItemView.findViewById(R.id.delete2);
+
+            productNameTextView.setText(product.getTitle());
+            // Set the price text
+            productPriceTextView.setText("Price:" + String.format("%.2f", product.getPrice())+ "TND");
+
+            deleteButton.setOnClickListener(view -> {
+                deleteProduct(product);
+                // Refresh the product list
+                refreshProductList();
+            });
+
+            gridLayout.addView(productItemView);
+        }
+    }
+
+    private void deleteProduct(Product product) {
+        productDAO.deleteById(product.getId());
+        refreshProductList();
+    }
+
+
+    private void refreshProductList() {
+        productListBedding = productDAO.getProductsByCategory(category);
+        productListFinding = productDAO.getProductsByCategory(Category.Bedding);
+        List<Product> combinedList = new ArrayList<>();
+        combinedList.addAll(productListBedding);
+        combinedList.addAll(productListFinding);
+
+        View rootView = getView();
+        if (rootView != null) {
+            displayProducts(rootView, combinedList);
+        }
+    }
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -57,10 +173,4 @@ public class BeddingFragment extends Fragment {
         }
     }
 
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_bedding, container, false);
-    }
 }

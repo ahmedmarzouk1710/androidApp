@@ -1,402 +1,28 @@
-<?xml version="1.0" encoding="utf-8" ?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-xmlns:tools="http://schemas.android.com/tools"
-android:layout_width="match_parent"
-android:layout_height="match_parent"
-xmlns:app="http://schemas.android.com/apk/res-auto"
-tools:context="com.ahmed.petapp.Fragments.FeedingFragment">
-<View
-    android:id="@+id/top_view"
-    android:layout_width="match_parent"
-    android:layout_height="200dp"
-    android:background="@drawable/bg_view"/>
-
-<GridLayout
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:rowCount="5"
-    android:columnCount="3"
-    android:layout_marginLeft="24dp"
-    android:layout_marginRight="25dp"
-    android:layout_marginTop="-80dp"
-    android:layout_marginBottom="100dp"
-    android:layout_below="@id/top_view">
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/oneCard"
-        android:layout_width="20dp"
-        android:layout_height="2dp"
-        app:cardCornerRadius="15dp"
-        android:layout_columnWeight="1"
-        android:layout_rowWeight="1"
-        android:layout_row="1"
-        android:layout_margin="12dp"
-        android:layout_column="0"
-
-        app:cardElevation="12dp">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:gravity="center"
-            >
-            <ImageView
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:src="@drawable/brokaton"
-                android:layout_gravity="center_horizontal"
-                />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="BROKATON"
-                android:layout_gravity="center_horizontal"
-                android:textSize="12sp"
-                android:textStyle="bold"
-                android:textColor="@color/black"/>
-
-
-        </LinearLayout>
-
-
-
-    </androidx.cardview.widget.CardView>
-    <androidx.cardview.widget.CardView
-        android:layout_width="20dp"
-        android:layout_height="2dp"
-        app:cardCornerRadius="15dp"
-        android:layout_columnWeight="1"
-        android:layout_rowWeight="1"
-        android:layout_row="1"
-        android:layout_margin="12dp"
-        android:layout_column="1"
-
-        app:cardElevation="12dp">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:gravity="center"
-            >
-            <ImageView
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:src="@drawable/cane"
-                android:layout_gravity="center_horizontal"
-                />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="MIGLIOR CANE"
-                android:layout_gravity="center_horizontal"
-                android:textSize="12sp"
-                android:textStyle="bold"
-                android:textColor="@color/black"/>
-
-
-        </LinearLayout>
-
-
-
-    </androidx.cardview.widget.CardView>
-    <androidx.cardview.widget.CardView
-        android:layout_width="20dp"
-        android:layout_height="2dp"
-        app:cardCornerRadius="15dp"
-        android:layout_columnWeight="1"
-        android:layout_rowWeight="1"
-        android:layout_row="1"
-        android:layout_margin="12dp"
-        android:layout_column="2"
-
-        app:cardElevation="12dp">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:gravity="center"
-            >
-            <ImageView
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:src="@drawable/brit"
-                android:layout_gravity="center_horizontal"
-                />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="BRIT DINDE"
-                android:layout_gravity="center_horizontal"
-                android:textSize="12sp"
-                android:textStyle="bold"
-                android:textColor="@color/black"/>
-
-
-        </LinearLayout>
-
-
-
-    </androidx.cardview.widget.CardView>
-    <androidx.cardview.widget.CardView
-        android:layout_width="20dp"
-        android:layout_height="2dp"
-        app:cardCornerRadius="15dp"
-        android:layout_columnWeight="1"
-        android:layout_rowWeight="1"
-        android:layout_row="2"
-        android:layout_margin="12dp"
-        android:layout_column="0"
-
-        app:cardElevation="12dp">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:gravity="center"
-            >
-            <ImageView
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:src="@drawable/alpha"
-                android:layout_gravity="center_horizontal"
-                />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="ALPHA"
-                android:layout_gravity="center_horizontal"
-                android:textSize="12sp"
-                android:textStyle="bold"
-                android:textColor="@color/black"/>
-
-
-        </LinearLayout>
-
-
-
-    </androidx.cardview.widget.CardView>
-
-    <androidx.cardview.widget.CardView
-        android:layout_width="20dp"
-        android:layout_height="2dp"
-        app:cardCornerRadius="15dp"
-        android:layout_columnWeight="1"
-        android:layout_rowWeight="1"
-        android:layout_row="2"
-        android:layout_margin="12dp"
-        android:layout_column="1"
-
-        app:cardElevation="12dp">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:gravity="center"
-            >
-            <ImageView
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:src="@drawable/gourmet"
-                android:layout_gravity="center_horizontal"
-                />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="GOURMAT"
-                android:layout_gravity="center_horizontal"
-                android:textSize="12sp"
-                android:textStyle="bold"
-                android:textColor="@color/black"/>
-
-
-        </LinearLayout>
-
-
-
-    </androidx.cardview.widget.CardView>
-
-    <androidx.cardview.widget.CardView
-        android:layout_width="20dp"
-        android:layout_height="2dp"
-        app:cardCornerRadius="15dp"
-        android:layout_columnWeight="1"
-        android:layout_rowWeight="1"
-        android:layout_row="2"
-        android:layout_margin="12dp"
-        android:layout_column="2"
-
-        app:cardElevation="12dp">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:gravity="center"
-            >
-            <ImageView
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:src="@drawable/royal"
-                android:layout_gravity="center_horizontal"
-                />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="ROYAL CANIN"
-                android:layout_gravity="center_horizontal"
-                android:textSize="12sp"
-                android:textStyle="bold"
-                android:textColor="@color/black"/>
-
-
-        </LinearLayout>
-
-
-
-    </androidx.cardview.widget.CardView>
-
-    <androidx.cardview.widget.CardView
-        android:layout_width="20dp"
-        android:layout_height="2dp"
-        app:cardCornerRadius="15dp"
-        android:layout_columnWeight="1"
-        android:layout_rowWeight="1"
-        android:layout_row="3"
-        android:layout_margin="12dp"
-        android:layout_column="0"
-
-        app:cardElevation="12dp">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:gravity="center"
-            >
-            <ImageView
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:src="@drawable/granilove"
-                android:layout_gravity="center_horizontal"
-                />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="GRANILOVE"
-                android:layout_gravity="center_horizontal"
-                android:textSize="12sp"
-                android:textStyle="bold"
-                android:textColor="@color/black"/>
-
-
-        </LinearLayout>
-
-
-
-    </androidx.cardview.widget.CardView>
-
-    <androidx.cardview.widget.CardView
-        android:layout_width="20dp"
-        android:layout_height="2dp"
-        app:cardCornerRadius="15dp"
-        android:layout_columnWeight="1"
-        android:layout_rowWeight="1"
-        android:layout_row="3"
-        android:layout_margin="12dp"
-        android:layout_column="1"
-
-        app:cardElevation="12dp">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:gravity="center"
-            >
-            <ImageView
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:src="@drawable/felix"
-                android:layout_gravity="center_horizontal"
-                />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="PURINA FELIX"
-                android:layout_gravity="center_horizontal"
-                android:textSize="12sp"
-                android:textStyle="bold"
-                android:textColor="@color/black"/>
-
-
-        </LinearLayout>
-
-
-
-    </androidx.cardview.widget.CardView>
-    <androidx.cardview.widget.CardView
-        android:layout_width="20dp"
-        android:layout_height="2dp"
-        app:cardCornerRadius="15dp"
-        android:layout_columnWeight="1"
-        android:layout_rowWeight="1"
-        android:layout_row="3"
-        android:layout_margin="12dp"
-        android:layout_column="2"
-
-        app:cardElevation="12dp">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:gravity="center"
-            >
-            <ImageView
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:src="@drawable/salmon"
-                android:layout_gravity="center_horizontal"
-                />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="SALMON"
-                android:layout_gravity="center_horizontal"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                android:textColor="@color/black"/>
-
-
-        </LinearLayout>
-
-
-
-    </androidx.cardview.widget.CardView>
-
-
-
-
-
-
-</GridLayout>
-
-<TextView
-    android:id="@+id/textView"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="Feeding"
-    android:textColor="@color/black"
-    android:textSize="36sp"
-    android:textStyle="bold"
-    android:layout_centerHorizontal="true"
-    android:layout_marginTop="10dp"
-    />
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.ahmed.petapp.FeedingFragment">
+
+    <View
+        android:id="@+id/top_view"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="@drawable/bg_view"/>
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Feeding"
+        android:textColor="@color/black"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"/>
 
     <androidx.cardview.widget.CardView
         android:id="@+id/search"
@@ -417,6 +43,7 @@ tools:context="com.ahmed.petapp.Fragments.FeedingFragment">
             android:background="#FAFFFFFF"
             android:inputType="text"/>
         <ImageView
+            android:id="@+id/imageSearch"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/baseline_search_24"
@@ -424,7 +51,16 @@ tools:context="com.ahmed.petapp.Fragments.FeedingFragment">
             android:layout_marginLeft="200dp"/>
     </androidx.cardview.widget.CardView>
 
-
-
+    <GridLayout
+        android:id="@+id/gridLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:rowCount="5"
+        android:columnCount="4"
+        android:layout_marginLeft="24dp"
+        android:layout_marginRight="25dp"
+        android:layout_marginTop="220dp"
+        android:layout_marginBottom="20dp">
+    </GridLayout>
 
 </RelativeLayout>

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.ahmed.petapp.Fragments.AddProductFragment">
+    tools:context="com.ahmed.petapp.AddProductFragment">
     <View
     android:id="@+id/top_view"
     android:layout_width="match_parent"
@@ -26,6 +26,70 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="10dp"
         />
+
+    <EditText
+        android:id="@+id/title"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="120dp"
+        android:layout_centerHorizontal="true"
+        android:ems="12"
+        android:inputType="text"
+        android:hint="Title" />
+
+    <EditText
+        android:id="@+id/price"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/title"
+        android:layout_marginTop="50dp"
+        android:ems="12"
+        android:inputType="numberDecimal"
+        android:hint="Price" />
+    <EditText
+        android:id="@+id/description"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/price"
+        android:layout_marginTop="50dp"
+        android:ems="12"
+        android:inputType="text"
+        android:hint="Description" />
+
+    <Spinner
+        android:id="@+id/categorySpinner"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/description"
+        android:layout_marginTop="50dp"
+        android:layout_centerHorizontal="true"
+        android:prompt="@string/select_category"
+        android:entries="@array/categories_array" />
+
+
+
+
+
+    <Button
+        android:id="@+id/clear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="520dp"
+        android:layout_marginLeft="60dp"
+        android:text="Clear"
+        android:radius="8dp" />
+
+    <Button
+        android:id="@+id/save"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="520dp"
+        android:layout_marginLeft="260dp"
+        android:text="Save"
+        android:radius="8dp" />
+
 
 
 

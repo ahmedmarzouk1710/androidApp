@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="categories_array">
+        <item>Feeding</item>
+        <item>Bedding</item>
+        <item>Accessories</item>
+        <item>Hygiene</item>
+    </string-array>
+    <string name="select_category">Select Category</string>
+</resources>

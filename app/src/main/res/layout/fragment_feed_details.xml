@@ -4,7 +4,7 @@ xmlns:tools="http://schemas.android.com/tools"
 android:layout_width="match_parent"
 android:layout_height="match_parent"
 xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context="com.ahmed.petapp.Fragments.FeedDetailsFragment">
+    tools:context="com.ahmed.petapp.FeedDetailsFragment">
 <View
     android:id="@+id/top_view"
     android:layout_width="match_parent"
@@ -46,18 +46,18 @@ xmlns:app="http://schemas.android.com/apk/res-auto"
                 android:layout_marginTop="40dp"
                 android:layout_width="200dp"
                 android:layout_height="200dp"
-                android:src="@drawable/brokaton"
+                android:src="@drawable/cane"
                 android:layout_gravity="center_horizontal"
                 />
 
             <TextView
-                android:id="@+id/text_view"
+                android:id="@+id/textPrice"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="10dp"
                 android:layout_below="@id/img_view"
-                android:text="149.500TND"
+                android:text="250.00TND"
                 android:textSize="14sp"
                 android:textStyle="bold"
                 android:textColor="@color/black"/>
@@ -73,15 +73,16 @@ xmlns:app="http://schemas.android.com/apk/res-auto"
                 android:layout_marginTop="2dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/text_view"
+                android:layout_below="@id/textPrice"
                 android:src="@drawable/rating"
                 android:layout_gravity="center_horizontal"
                 />
             <TextView
+                android:id="@+id/textDescription"
                 android:layout_width="300dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:text="BROKATON CHIEN COMPLET: Aliment complet et équilibré pour chiens adultes ayant un niveau normal d’activité. HAUTE QUALITÉ: Élaboré avec sa FORMULE SPÉCIAL à base de viandes déshydratées, de céréales et de végétaux et enrichi..."
+                android:layout_marginTop="20dp"
+                android:text="Cane CHIEN COMPLET: Aliment complet et équilibré pour chiens adultes ayant un niveau normal d’activité."
                 android:textSize="14sp"
                 android:textStyle="bold"
                 android:textColor="@color/black"/>
@@ -101,11 +102,11 @@ xmlns:app="http://schemas.android.com/apk/res-auto"
 </GridLayout>
 
 <TextView
-    android:id="@+id/textView"
+    android:id="@+id/textNameProductView"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:text="BROKATON CHIEN COMPLET 20KG"
-    android:textColor="@color/white"
+    android:text="feed1"
+    android:textColor="@color/black"
     android:textSize="22sp"
     android:textStyle="bold"
     android:layout_centerHorizontal="true"

@@ -11,14 +11,14 @@ import androidx.fragment.app.Fragment;
 
 import com.example.petapp.R;
 
-import com.ahmed.petapp.Database.AppDatabase;
+import com.ahmed.petapp.Database.AppDataBase;
 import com.ahmed.petapp.Module.Post;
 
 import java.util.List;
 
 public class CommunityFragment extends Fragment {
 
-    private AppDatabase appDatabase;
+    private AppDataBase appDatabase;
 
     public CommunityFragment() {
         // Required empty public constructor
@@ -30,7 +30,7 @@ public class CommunityFragment extends Fragment {
         View rootView = inflater.inflate(R.layout.fragment_community, container, false);
 
         // Initialize the database
-        appDatabase = AppDatabase.getAppDatabase(getContext());
+        appDatabase = AppDataBase.getAppDatabase(getContext());
 
         // Load posts from the database and add them to the UI
         loadAndDisplayPosts(rootView);
