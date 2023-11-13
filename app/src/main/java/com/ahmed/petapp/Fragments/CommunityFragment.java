@@ -4,7 +4,6 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -12,14 +11,14 @@ import androidx.fragment.app.Fragment;
 
 import com.example.petapp.R;
 
-import com.ahmed.petapp.Database.AppDataBase;
+import com.ahmed.petapp.Database.AppDatabase;
 import com.ahmed.petapp.Module.Post;
 
 import java.util.List;
 
 public class CommunityFragment extends Fragment {
 
-    private AppDataBase appDatabase;
+    private AppDatabase appDatabase;
 
     public CommunityFragment() {
         // Required empty public constructor
@@ -31,7 +30,7 @@ public class CommunityFragment extends Fragment {
         View rootView = inflater.inflate(R.layout.fragment_community, container, false);
 
         // Initialize the database
-        appDatabase = AppDataBase.getAppDatabase(getContext());
+        appDatabase = AppDatabase.getAppDatabase(getContext());
 
         // Load posts from the database and add them to the UI
         loadAndDisplayPosts(rootView);

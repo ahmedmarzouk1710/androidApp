@@ -7,7 +7,7 @@ import android.widget.EditText;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.ahmed.petapp.Database.AppDataBase;
+import com.ahmed.petapp.Database.AppDatabase;
 import com.ahmed.petapp.Module.Post;
 import com.example.petapp.R;
 
@@ -49,7 +49,7 @@ public class addPost extends AppCompatActivity {
         // Use a background thread or AsyncTask to perform database operations
         // For simplicity, we are using allowMainThreadQueries() in the AppDataBase class
         // In a production environment, consider using AsyncTask or other background execution methods
-        AppDataBase appDataBase = AppDataBase.getAppDatabase(getApplicationContext());
+        AppDatabase appDataBase = AppDatabase.getAppDatabase(getApplicationContext());
         appDataBase.postDao().insertOne(post);
     }
 }
