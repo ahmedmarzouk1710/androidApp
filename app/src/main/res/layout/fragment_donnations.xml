@@ -5,50 +5,90 @@
     android:padding="16dp"
     tools:context="com.ahmed.petapp.Fragments.DonnationsFragment">
 
-    <!-- Donation Title -->
     <TextView
         android:id="@+id/tv_donation_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Support Pet Adoption"
         android:gravity="center"
-        android:textSize="30sp"
-        android:textColor="@color/black" />
-      
+        android:textSize="34sp"
+        android:textColor="@color/lavender"
+        android:layout_gravity="top|center_horizontal" />
 
-    <!-- Donation Description -->
-
-    <!-- Donation Amount Input -->
-
-
-
-    <EditText
-        android:id="@+id/et_donation_amount"
-        android:layout_width="match_parent"
+    <RadioGroup
+        android:id="@+id/rg_donation_amount"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="Enter Amount"
-        android:inputType="numberDecimal"
         android:layout_marginTop="16dp"
-        android:layout_gravity="center"
-        android:background="@android:drawable/editbox_background" />
+        android:layout_gravity="center">
 
-    <!-- Donation Confirm Button -->
+        <RadioButton
+            android:id="@+id/rb_donation_10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="$10"
+            android:checked="true" />
+
+        <RadioButton
+            android:id="@+id/rb_donation_25"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="$25" />
+
+        <RadioButton
+            android:id="@+id/rb_donation_50"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="$50" />
+
+        <RadioButton
+            android:id="@+id/rb_donation_100"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="$100" />
+
+        <EditText
+            android:id="@+id/et_donation_custom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Other Amount"
+            android:inputType="numberDecimal"
+            android:layout_marginLeft="16dp" />
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/tv_donation_description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="-180dp"
+        android:text="Your generous donation will help us provide shelter, food, and medical care to animals in need."
+        android:textSize="18sp" />
+
     <Button
         android:id="@+id/btn_donate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Donate"
-        android:layout_marginTop="24dp"
         android:layout_gravity="center_horizontal|bottom"
+        android:layout_marginTop="24dp"
+        android:layout_marginBottom="70dp"
         android:background="@color/lavender"
+        android:text="Donate"
         android:textColor="#FFFFFF" />
 
-    <!-- Progress bar (hidden by default) -->
     <ProgressBar
         android:id="@+id/pb_donation_progress"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:visibility="gone"
         android:layout_gravity="center" />
+
+    <ImageView
+        android:id="@+id/iv_donation_impact"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:visibility="gone" />
+
 
 </FrameLayout>
