@@ -27,6 +27,7 @@ import android.widget.Toast;
 import com.ahmed.petapp.Activity.addPost;
 import com.ahmed.petapp.Fragments.AdoptionFragment;
 import com.ahmed.petapp.Fragments.CommunityFragment;
+import com.ahmed.petapp.Fragments.DonationListFragment;
 import com.ahmed.petapp.Fragments.DonnationsFragment;
 import com.ahmed.petapp.Fragments.HomeFragment;
 import com.ahmed.petapp.Fragments.MarketplaceFragment;
@@ -182,6 +183,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
            replaceFragment(new MedicalFragment());
        }else if (itemId== R.id.nav_forum) {
            replaceFragment(new CommunityFragment());
+       }
+       else if (itemId == R.id.nav_donation_list) {
+           replaceFragment(new DonationListFragment()); // Add this block for Donation List
        }
        drawerlayout.closeDrawer(GravityCompat.START);
         return true;
