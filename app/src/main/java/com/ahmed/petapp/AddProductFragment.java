@@ -1,9 +1,14 @@
-package com.ahmed.petapp.Fragments;
+package com.ahmed.petapp;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,9 +17,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
-
-import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
 
 import com.ahmed.petapp.database.AppDatabase;
 import com.ahmed.petapp.entities.Category;
@@ -154,10 +156,21 @@ public class AddProductFragment extends Fragment {
                 title.setText("");
                 price.setText("");
                 description.setText("");
+                // Create an instance of the MarketplaceFragment
+                MarketplaceFragment marketplaceFragment = new MarketplaceFragment();
+
+                // Replace the current fragment with the MarketplaceFragment
+                FragmentTransaction transaction = getParentFragmentManager().beginTransaction();
+                transaction.replace(R.id.frame_layout, marketplaceFragment);
+                transaction.addToBackStack(null);
+                transaction.commit();
             } else {
                 Toast.makeText(requireActivity(), "Please fill in all fields", Toast.LENGTH_SHORT).show();
             }
+
         });
+
+
 
         clear.setOnClickListener(e -> {
             title.setText("");

@@ -11,11 +11,12 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.app.Dialog;
-import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Gravity;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
@@ -24,15 +25,6 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
-import com.ahmed.petapp.Activity.addPost;
-import com.ahmed.petapp.Fragments.AdoptionFragment;
-import com.ahmed.petapp.Fragments.CommunityFragment;
-import com.ahmed.petapp.Fragments.DonnationsFragment;
-import com.ahmed.petapp.Fragments.HomeFragment;
-import com.ahmed.petapp.Fragments.MarketplaceFragment;
-import com.ahmed.petapp.Fragments.MedicalFragment;
-import com.ahmed.petapp.Fragments.ProfileFragment;
-import com.ahmed.petapp.Fragments.ShortsFragment;
 import com.example.petapp.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -53,6 +45,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         drawerlayout=findViewById(R.id.drawer_layout);
         NavigationView navigationview =findViewById(R.id.nav_view);
         navigationview.setNavigationItemSelectedListener(this);
+
         Toolbar toolbar =findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this,drawerlayout,toolbar,R.string.open_nav,R.string.close_nav);
@@ -186,10 +179,5 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
        drawerlayout.closeDrawer(GravityCompat.START);
         return true;
         }
-    public void onAddPostClick(View view) {
-        // Open the activity_addd_post.xml layout when the "Add post" item is clicked
-        startActivity(new Intent(this, addPost.class));
-    }
-
 
 }

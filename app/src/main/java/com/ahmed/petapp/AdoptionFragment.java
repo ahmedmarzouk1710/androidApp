@@ -1,4 +1,4 @@
-package com.ahmed.petapp.Fragments;
+package com.ahmed.petapp;
 
 import android.os.Bundle;
 
@@ -12,10 +12,10 @@ import com.example.petapp.R;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link DonnationsFragment#newInstance} factory method to
+ * Use the {@link AdoptionFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class DonnationsFragment extends Fragment {
+public class AdoptionFragment extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -26,7 +26,7 @@ public class DonnationsFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public DonnationsFragment() {
+    public AdoptionFragment() {
         // Required empty public constructor
     }
 
@@ -36,11 +36,11 @@ public class DonnationsFragment extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment DonnationsFragment.
+     * @return A new instance of fragment AdoptionFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static DonnationsFragment newInstance(String param1, String param2) {
-        DonnationsFragment fragment = new DonnationsFragment();
+    public static AdoptionFragment newInstance(String param1, String param2) {
+        AdoptionFragment fragment = new AdoptionFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -61,6 +61,6 @@ public class DonnationsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_donnations, container, false);
+        return inflater.inflate(R.layout.fragment_adoption, container, false);
     }
 }

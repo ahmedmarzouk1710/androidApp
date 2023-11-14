@@ -1,4 +1,4 @@
-package com.ahmed.petapp.Fragments;
+package com.ahmed.petapp;
 
 import android.os.Bundle;
 

@@ -1,4 +1,4 @@
-package com.ahmed.petapp.Module;
+package com.ahmed.petapp.entities;
 
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;

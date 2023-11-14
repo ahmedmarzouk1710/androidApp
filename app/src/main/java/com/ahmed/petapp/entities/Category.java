@@ -1,8 +1,13 @@
-package com.ahmed.petapp.Module;
+package com.ahmed.petapp.entities;
 
 import androidx.room.TypeConverter;
 
-public class Converters {
+public enum Category {
+    Feeding,
+    Bedding,
+    Accessories,
+    Hygiene;
+
     @TypeConverter
     public static Category fromString(String value) {
         return value == null ? null : Category.valueOf(value);
@@ -13,4 +18,3 @@ public class Converters {
         return category == null ? null : category.name();
     }
 }
-

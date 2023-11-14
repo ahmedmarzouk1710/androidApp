@@ -1,6 +1,13 @@
-package com.ahmed.petapp.Fragments;
+package com.ahmed.petapp;
 
 import android.os.Bundle;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.cardview.widget.CardView;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
+
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.LayoutInflater;
@@ -11,15 +18,10 @@ import android.widget.GridLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentTransaction;
-
 import com.ahmed.petapp.DAO.ProductDAO;
-import com.ahmed.petapp.databaseApp.AppDatabase;
-import com.ahmed.petapp.Module.Category;
-import com.ahmed.petapp.Module.Product;
+import com.ahmed.petapp.database.AppDatabase;
+import com.ahmed.petapp.entities.Category;
+import com.ahmed.petapp.entities.Product;
 import com.example.petapp.R;
 
 import java.util.ArrayList;

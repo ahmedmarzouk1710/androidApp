@@ -1,10 +1,8 @@
-package com.ahmed.petapp.Fragments;
+package com.ahmed.petapp;
 
 import android.os.Bundle;
 
-import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentTransaction;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,10 +12,10 @@ import com.example.petapp.R;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link AdminMarketFragment#newInstance} factory method to
+ * Use the {@link ShortsFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class AdminMarketFragment extends Fragment {
+public class ShortsFragment extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -28,7 +26,7 @@ public class AdminMarketFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public AdminMarketFragment() {
+    public ShortsFragment() {
         // Required empty public constructor
     }
 
@@ -38,11 +36,11 @@ public class AdminMarketFragment extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment AdminMarketFragment.
+     * @return A new instance of fragment ShortsFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static AdminMarketFragment newInstance(String param1, String param2) {
-        AdminMarketFragment fragment = new AdminMarketFragment();
+    public static ShortsFragment newInstance(String param1, String param2) {
+        ShortsFragment fragment = new ShortsFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -59,32 +57,10 @@ public class AdminMarketFragment extends Fragment {
         }
     }
 
-    /*@Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_admin_market, container, false);
-    }*/
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_admin_market, container, false);
-
-        CardView feedingCardView = view.findViewById(R.id.add);
-
-        feedingCardView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                AddProductFragment addProductFragment = new AddProductFragment();
-                FragmentTransaction transaction = getParentFragmentManager().beginTransaction();
-                transaction.replace(R.id.frame_layout, addProductFragment);
-                transaction.addToBackStack(null);
-                transaction.commit();
-            }
-        });
-
-
-        return view;
+        // Inflate the layout for this fragment
+        return inflater.inflate(R.layout.fragment_shorts, container, false);
     }
 }

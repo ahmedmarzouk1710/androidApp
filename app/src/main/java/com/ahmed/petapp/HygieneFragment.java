@@ -1,6 +1,11 @@
-package com.ahmed.petapp.Fragments;
+package com.ahmed.petapp;
 
 import android.os.Bundle;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.LayoutInflater;
@@ -11,14 +16,10 @@ import android.widget.GridLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
-
 import com.ahmed.petapp.DAO.ProductDAO;
-import com.ahmed.petapp.databaseApp.AppDatabase;
-import com.ahmed.petapp.Module.Category;
-import com.ahmed.petapp.Module.Product;
+import com.ahmed.petapp.database.AppDatabase;
+import com.ahmed.petapp.entities.Category;
+import com.ahmed.petapp.entities.Product;
 import com.example.petapp.R;
 
 import java.util.ArrayList;
@@ -26,10 +27,10 @@ import java.util.List;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link AccessoriesFragment#newInstance} factory method to
+ * Use the {@link HygieneFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class AccessoriesFragment extends Fragment {
+public class HygieneFragment extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -40,7 +41,7 @@ public class AccessoriesFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public AccessoriesFragment() {
+    public HygieneFragment() {
         // Required empty public constructor
     }
 
@@ -50,19 +51,20 @@ public class AccessoriesFragment extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment AccessoriesFragment.
+     * @return A new instance of fragment HygieneFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static AccessoriesFragment newInstance(String param1, String param2) {
-        AccessoriesFragment fragment = new AccessoriesFragment();
+    public static HygieneFragment newInstance(String param1, String param2) {
+        HygieneFragment fragment = new HygieneFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
         fragment.setArguments(args);
         return fragment;
     }
-    private Category category = Category.Accessories;
-    private List<Product> productListAccessories;
+
+    private Category category = Category.Hygiene;
+    private List<Product> productListHygiene;
     private List<Product> productListFinding;
     private ProductDAO productDAO;
     private EditText searchEditText;
@@ -71,17 +73,18 @@ public class AccessoriesFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.fragment_accessories, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_hygiene, container, false);
         TextView textView = rootView.findViewById(R.id.textView);
         textView.setText(category.name());
 
         productDAO = AppDatabase.getInstance(requireContext()).productDAO();
 
-        productListAccessories = productDAO.getProductsByCategory(category);
-        productListFinding = productDAO.getProductsByCategory(Category.Accessories);
+        productListHygiene = productDAO.getProductsByCategory(category);
+        productListFinding = productDAO.getProductsByCategory(Category.Hygiene);
         List<Product> combinedList = new ArrayList<>();
-        combinedList.addAll(productListAccessories);
+        combinedList.addAll(productListHygiene);
         combinedList.addAll(productListFinding);
+
         searchEditText = rootView.findViewById(R.id.searchEditText);
         searchEditText.addTextChangedListener(new TextWatcher() {
             @Override
@@ -103,9 +106,10 @@ public class AccessoriesFragment extends Fragment {
 
         return rootView;
     }
+
     private void filterProducts(String searchText) {
         List<Product> filteredList = new ArrayList<>();
-        for (Product product : productListAccessories) {
+        for (Product product : productListHygiene) {
             if (product.getTitle().toLowerCase().contains(searchText.toLowerCase())) {
                 filteredList.add(product);
             }
@@ -122,12 +126,12 @@ public class AccessoriesFragment extends Fragment {
         for (int i = 0; i < productList.size(); i++) {
             Product product = productList.get(i);
 
-            View productItemView = LayoutInflater.from(requireContext()).inflate(R.layout.product_item_layout4, gridLayout, false);
+            View productItemView = LayoutInflater.from(requireContext()).inflate(R.layout.product_item_layout3, gridLayout, false);
 
-            ImageView productImageView = productItemView.findViewById(R.id.productImageView4);
-            TextView productNameTextView = productItemView.findViewById(R.id.productNameTextView4);
-            TextView productPriceTextView = productItemView.findViewById(R.id.productPriceTextView4);  // New TextView for price
-            ImageView deleteButton = productItemView.findViewById(R.id.delete4);
+            ImageView productImageView = productItemView.findViewById(R.id.productImageView3);
+            TextView productNameTextView = productItemView.findViewById(R.id.productNameTextView3);
+            TextView productPriceTextView = productItemView.findViewById(R.id.productPriceTextView3);  // New TextView for price
+            ImageView deleteButton = productItemView.findViewById(R.id.delete3);
 
             productNameTextView.setText(product.getTitle());
             // Set the price text
@@ -150,10 +154,10 @@ public class AccessoriesFragment extends Fragment {
 
 
     private void refreshProductList() {
-        productListAccessories = productDAO.getProductsByCategory(category);
-        productListFinding = productDAO.getProductsByCategory(Category.Accessories);
+        productListHygiene = productDAO.getProductsByCategory(category);
+        productListFinding = productDAO.getProductsByCategory(Category.Hygiene);
         List<Product> combinedList = new ArrayList<>();
-        combinedList.addAll(productListAccessories);
+        combinedList.addAll(productListHygiene);
         combinedList.addAll(productListFinding);
 
         View rootView = getView();
@@ -161,5 +165,15 @@ public class AccessoriesFragment extends Fragment {
             displayProducts(rootView, combinedList);
         }
     }
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        if (getArguments() != null) {
+            mParam1 = getArguments().getString(ARG_PARAM1);
+            mParam2 = getArguments().getString(ARG_PARAM2);
+        }
+    }
+
 
 }

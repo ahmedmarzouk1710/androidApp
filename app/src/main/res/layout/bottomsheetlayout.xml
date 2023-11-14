@@ -108,13 +108,7 @@
             android:text="Add post"
             android:textColor="@color/black"
             android:layout_marginLeft="30dp"
-            android:textSize="16sp"
-            android:clickable="true"
-            android:focusable="true"
-            android:onClick="onAddPostClick"
-            />
-
-
+            android:textSize="16sp"/>
 
     </LinearLayout>
 

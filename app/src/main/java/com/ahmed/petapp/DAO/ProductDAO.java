@@ -4,8 +4,8 @@ import androidx.room.Dao;
 import androidx.room.Insert;
 import androidx.room.Query;
 
-import com.ahmed.petapp.Module.Category;
-import com.ahmed.petapp.Module.Product;
+import com.ahmed.petapp.entities.Category;
+import com.ahmed.petapp.entities.Product;
 
 import java.util.List;
 
